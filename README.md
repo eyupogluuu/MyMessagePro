@@ -12,8 +12,13 @@ Bootstrap (Arayüz Tasarımı)
 
 **Ekran Resimleri:**<br>
 
-![](https://github.com/eyupogluuu/MyEgitimAkademi_Portfolio/blob/master/1.PNG)<br>
-
+![](https://github.com/eyupogluuu/MyMessagePro/blob/master/signin.PNG)<br>
+![](https://github.com/eyupogluuu/MyMessagePro/blob/master/login.PNG)<br>
+![](https://github.com/eyupogluuu/MyMessagePro/blob/master/profile.PNG)<br>
+![](https://github.com/eyupogluuu/MyMessagePro/blob/master/sendbox.PNG)<br>
+![](https://github.com/eyupogluuu/MyMessagePro/blob/master/detail.PNG)<br>
+![](https://github.com/eyupogluuu/MyMessagePro/blob/master/newmessage.PNG)<br>
+![](https://github.com/eyupogluuu/MyMessagePro/blob/master/notes.PNG)<br>
 
 **Amaç**
 kullanıcıların sanal bir ortamda etkileşimde bulunmalarını kolaylaştırmak, güvenli bir iletişim ortamı sunmak ve kişisel bağlantılarını güçlendirmelerine olanak tanımak üzere belirlenmiştir.
