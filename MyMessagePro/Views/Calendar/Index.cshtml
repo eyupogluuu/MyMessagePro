@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_member2Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Defteri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #notEkleInput {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #notListesi {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .not {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .silDugmesi {
+            background-color: #ff3333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+ <h3 class="card-header" style="background-color:#343a40; color:white">Notlarım</h3> <br /> 
+
+    <input type="text" id="notEkleInput" placeholder="Not eklemek için buraya yazın"> <br />
+    <button onclick="notEkle()" class=" btn-outline-dark">Not Ekle</button>
+    <br />
+    <ul id="notListesi"></ul>
+   
+    <script>
+        function notEkle() {
+            var notInput = document.getElementById('notEkleInput');
+            var not = notInput.value.trim();
+
+            if (not !== '') {
+                var notListesi = document.getElementById('notListesi');
+
+                var li = document.createElement('li');
+                li.className = 'not';
+
+                var span = document.createElement('span');
+                span.textContent = not;
+
+                var silDugmesi = document.createElement('button');
+                silDugmesi.className = 'silDugmesi';
+                silDugmesi.textContent = 'Sil';
+                silDugmesi.onclick = function () {
+                    notListesi.removeChild(li);
+                };
+
+                li.appendChild(span);
+                li.appendChild(silDugmesi);
+
+                notListesi.appendChild(li);
+
+                notInput.value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+

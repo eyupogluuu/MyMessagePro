@@ -1,0 +1,30 @@
+﻿@model List<Friendship>
+@{
+    ViewData["Title"] = "myFriend";
+    Layout = "~/Views/Shared/_member2Layout.cshtml";
+}
+
+<h3 class="card-header" style="background-color:#343a40; color:white">Arkadaşlarım</h3>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Arkadşım</th>        
+        <th>Tarih</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.friendshipID</td>
+            <td>@item.friendReceiverUsername</td>
+            <td>@item.friendDate.ToShortDateString()</td>
+            <td><a class="btn btn-outline-danger" href="/UMessage/messageDeletel/@item.friendshipID">Sil</a></td>
+        </tr>
+
+    }
+</table>
+<br />
+<a class="btn btn-outline-dark" href="/Friendship/newFriend/">Yeni Arkadaş Ekle</a>
+

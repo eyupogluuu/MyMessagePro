@@ -1,0 +1,33 @@
+﻿@model MyMessagePro.Models.MyProfileViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_member2Layout.cshtml";
+}
+
+<h3 class="card-header" style="background-color:#343a40; color:white">Profilim</h3>
+<br />
+<div class="container-fuild">
+    <form method="post" enctype="multipart/form-data">
+        @Html.Label("Kullanıcı Adı:")
+        <input class="form-control" asp-for="username" style="border:1px solid #000" />
+        <br />
+        @Html.Label("Şifre:")
+        <input class="form-control" asp-for="password" style="border:1px solid #000" />
+        <br />
+        @Html.Label("Şifre Onay:")
+        <input class="form-control" asp-for="confirmPassword" style="border:1px solid #000" />
+        <br />
+        @Html.Label("Mail:")
+        <input class="form-control" asp-for="mail" style="border:1px solid #000" />
+        <br />
+        @Html.Label("City:")
+        <input class="form-control" asp-for="city" style="border:1px solid #000" />
+        <br />
+       <div class="form-group">
+           <label>Resim Seç</label> <br />
+           <input type="file" asp-for="image" />
+       </div>
+        <button type="submit" class="btn btn-success mr-2" >Güncelle</button>
+    </form>
+</div>
+

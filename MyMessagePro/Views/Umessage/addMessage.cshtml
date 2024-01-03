@@ -1,0 +1,55 @@
+﻿@model UMessage
+@{
+    ViewData["Title"] = "addMessage";
+    Layout = "~/Views/Shared/_member2Layout.cshtml";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<h3 class="card-header" style="background-color:#343a40; color:white">Yeni Mesaj </h3>
+<br />
+
+<div class="container">
+    <form method="post" >
+        <br />
+        <label>Kime</label>
+       <input type="text" asp-for="receiverUsername" class="form-control" style="border:1px solid #000"/>
+        <br />
+        <label>Konu</label>
+        <input type="text" asp-for="subject" class="form-control" style="border:1px solid #000" />
+        <br />
+        <label>Mesaj</label>
+        <div style="width: 1000px; height: 300px; border: 1px solid #000; overflow: hidden;">
+            <textarea asp-for ="content" class="form-control" style="width: calc(100% - 2px); height: calc(100% - 2px); border: none; margin: 0;"></textarea>
+        </div>     
+        <br />
+        <br />
+        <div class="form-group d-flex justify-content-between">
+            <button type="submit" class="btn btn-dark mr-2" name="button" value="save" id="btn1">Kaydet</button>
+            <button type="submit" class="btn btn-info mr-2" name="button" value="draft">Taslak</button>
+            <button type="submit" class="btn btn-danger ml-auto" name="button" value="exit">İptal</button>
+
+        </div>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function (e) {
+            e.preventDefault(); // Formun hemen gönderilmesini engelle
+
+            swal({
+                title: "İletildi!",
+                text: "Mesaj Başarıyla İletildi",
+                icon: "success",
+                button: "Devam Et",
+                confirmButtonText: 'Devam et'
+            }).then((result) => {
+                if (result) {
+                    // SweetAlert'dan gelen onaydan sonra formu gönder
+                    window.location.href = '@Url.Action("mySendbox", "Member")';
+                }
+            });
+        });
+    });
+</script>

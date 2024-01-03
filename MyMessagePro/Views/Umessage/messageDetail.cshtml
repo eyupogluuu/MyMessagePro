@@ -1,0 +1,29 @@
+﻿@model UMessage
+@{
+    ViewData["Title"] = "messageDetail";
+    Layout = "~/Views/Shared/_member2Layout.cshtml";
+}
+
+<br />
+<div class="container">
+    <h2>Mesaj Detayı</h2>
+    <form>
+        @* Kullanıcı adı ve konu alanları sadece görüntüleme amaçlı, güncellenmeyecek *@
+        <div class="form-group">
+            <label for="kişi">Kişi:</label>
+            <input type="text" id="kişi" name="kişi" class="form-control" value="@Model.receiverUsername" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="konu">Konu:</label>
+            <input type="text" id="konu" name="konu" class="form-control" value="@Model.subject" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="mesaj">Mesaj:</label>
+            <textarea id="mesaj" name="mesaj" class="form-control" rows="5">@Model.content</textarea>
+        </div>
+        
+    </form>
+</div>
+

@@ -1,0 +1,41 @@
+﻿@model List<UMessage>
+@{
+    ViewData["Title"] = "draftList";
+    Layout = "~/Views/Shared/_member2Layout.cshtml";
+}
+<link rel="stylesheet" href="path/to/sweetalert2.min.css">
+<script src="path/to/sweetalert2.all.min.js"></script>
+
+<h3 class="card-header" style="background-color:#343a40; color:white">Taslaklar</h3>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Kimden</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Tarih</th>
+        <th>Detay</th>
+        <th>Sil</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.messageID</td>
+            <td>@item.senderUsername</td>
+            <td>@item.subject</td>
+            <td>@item.content.Substring(0,20)...</td>
+            <td>@item.date.ToShortDateString()</td>
+            <td><a class="btn btn-outline-warning" href="/UMessage/messageDetail/@item.messageID">Oku</a></td>
+            <td><a class="btn btn-outline-danger" href="/UMessage/messageDelete/@item.messageID">Sil</a></td>
+          
+        </tr>
+
+    }
+</table>
+<br />
+<a class="btn btn-outline-dark" href="/UMessage/addMessage/">Mesaj Oluştur</a>
+
+

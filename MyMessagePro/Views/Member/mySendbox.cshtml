@@ -1,0 +1,38 @@
+﻿@model List<UMessage>
+@{
+    ViewData["Title"] = "mySendbox";
+    Layout = "~/Views/Shared/_member2Layout.cshtml";
+}
+
+<h3 class="card-header" style="background-color:#343a40; color:white">Giden Kutusu</h3>
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Kime</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Tarih</th>
+        <th>Detay</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.messageID</td>
+            <td>@item.receiverUsername</td>
+            <td>@item.subject</td>
+            <td>@item.content.Substring(0,20)...</td>
+            <td>@item.date.ToShortDateString()</td>
+            <td><a class="btn btn-outline-success" href="/UMessage/messageDetail/@item.messageID">Oku</a></td>
+            <td><a class="btn btn-outline-danger" href="/UMessage/messageDelete/@item.messageID">Sil</a></td>
+        </tr>
+
+    }
+</table>
+<br />
+<a class="btn btn-outline-dark" href="/UMessage/addMessage/">Mesaj Oluştur</a>
+
+
+
